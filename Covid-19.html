@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COVID-19 Response - Hospital Clinic</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+    
+    h1 {
+      color: #333;
+      margin-top: 20px;
+    }
+    
+    .statistics {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    
+    .stat-box {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 0 10px;
+      width: 200px;
+    }
+    
+    .stat-box h3 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .stat-box p {
+      color: #666;
+      margin-bottom: 5px;
+    }
+    
+    .success-rate {
+      margin-top: 50px;
+    }
+    
+    .success-rate p {
+      color: #666;
+      margin-bottom: 10px;
+    }
+    
+    .success-rate .progress-bar {
+      background-color: #ddd;
+      border-radius: 5px;
+      height: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .success-rate .progress {
+      background-color: #4CAF50;
+      height: 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>COVID-19 Response - ClinIQ</h1>
+
+  <div class="statistics">
+    <div class="stat-box">
+      <h3>Patients Admitted</h3>
+      <p id="admitted-count">0</p>
+    </div>
+    <div class="stat-box">
+      <h3>Recovered</h3>
+      <p id="recovered-count">0</p>
+    </div>
+    <div class="stat-box">
+      <h3>Discharged</h3>
+      <p id="discharged-count">0</p>
+    </div>
+    <div class="stat-box">
+      <h3>Death Count</h3>
+      <p id="death-count">0</p>
+    </div>
+  </div>
+
+  <div class="success-rate">
+    <p>Success Rate: <span id="success-rate">0%</span></p>
+    <div class="progress-bar">
+      <div class="progress" id="success-progress"></div>
+    </div>
+  </div>
+
+  <!-- Update the statistics values using JavaScript -->
+  <script>
+    // Mock data for demonstration purposes
+    var admittedCount = 120;
+    var recoveredCount = 40;
+    var dischargedCount = 60;
+    var deathCount = 20;
+
+    // Calculate success rate
+    var successRate = ((recoveredCount + dischargedCount) / admittedCount) * 100;
+
+    // Update the HTML elements with the statistics values
+    document.getElementById('admitted-count').innerText = admittedCount;
+    document.getElementById('recovered-count').innerText = recoveredCount;
+    document.getElementById('discharged-count').innerText = dischargedCount;
+    document.getElementById('death-count').innerText = deathCount;
+    document.getElementById('success-rate').innerText = successRate.toFixed(2) + "%";
+
+    // Update the progress bar width based on the success rate
+    var progressWidth = successRate.toFixed(2) + "%";
+    document.getElementById('success-progress').style.width = progressWidth;
+  </script>
+</body>
+
+</html>

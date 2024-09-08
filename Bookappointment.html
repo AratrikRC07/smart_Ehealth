@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Book Appointment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+
+        p {
+            color: #666;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: moveIn 1s ease-out;
+        }
+
+        @keyframes moveIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .calendar {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .calendar-icon {
+            font-size: 32px;
+            color: #007bff;
+            margin-right: 10px;
+            animation: iconSpin 2s infinite linear;
+        }
+
+        @keyframes iconSpin {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .calendar-input {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        .calendar-input:hover,
+        .calendar-input:focus {
+            border-color: #999;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            pointer-events: none; /* Disable pointer events by default */
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .button-animation {
+            animation: buttonBounce 1s infinite;
+        }
+
+        /* Additional Styles for the Calendar */
+        .calendar-container {
+            position: relative;
+        }
+
+        /* Animations */
+        @keyframes buttonBounce {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* WordArt */
+        .wordart {
+            text-align: center;
+            font-family: 'Indie Flower', cursive;
+            font-size: 60px;
+            font-style: italic;
+            text-transform: uppercase;
+            color: #007bff;
+            opacity: 0;
+            animation: textFade 3s infinite;
+        }
+
+        @keyframes textFade {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var button = document.querySelector('.button');
+            var calendarInput = document.querySelector('.calendar-input');
+
+            calendarInput.addEventListener('input', function() {
+                // Enable or disable the button based on whether a date has been chosen
+                if (calendarInput.value !== '') {
+                    button.classList.remove('disabled');
+                    button.classList.add('button-animation');
+                    button.style.pointerEvents = 'auto';
+                } else {
+                    button.classList.add('disabled');
+                    button.classList.remove('button-animation');
+                    button.style.pointerEvents = 'none';
+                }
+            });
+        };
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wordart">Book an Appointment</div>
+        <p>At your Service 24/7</p>
+
+        <div class="calendar-container">
+            <div class="calendar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-calendar calendar-icon">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <input type="date" class="calendar-input">
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="Type of service.html" class="button disabled" style="pointer-events: none;">Book Now</a>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
