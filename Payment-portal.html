@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Payment Portal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #000;
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        /* Payment Options Styling */
+        .payment-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .payment-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            color: #555;
+        }
+
+        .payment-option:hover {
+            transform: translateY(-5px);
+            color: #000;
+        }
+
+        .payment-option img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .payment-option:hover img {
+            transform: scale(1.1);
+        }
+
+        .payment-option p {
+            margin: 0;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        /* Custom Styles */
+        .netbanking {
+            color: #2196F3;
+        }
+
+        .upi {
+            color: #FFC107;
+        }
+
+        .credit-card {
+            color: #4CAF50;
+        }
+
+        .qr-code {
+            color: #E91E63;
+        }
+    </style>
+    <script>
+        function validateForm(event) {
+            // Form validation
+            var cardNumber = document.getElementById("card-number").value;
+            var cardName = document.getElementById("card-name").value;
+            var expirationDate = document.getElementById("expiration-date").value;
+            var cvv = document.getElementById("cvv").value;
+            var amount = document.getElementById("amount").value;
+            var currency = document.getElementById("currency").value;
+            var termsChecked = document.getElementById("terms").checked;
+
+            if (cardNumber.trim() === "" || cardName.trim() === "" || expirationDate.trim() === "" || cvv.trim() === "" || amount.trim() === "" || currency.trim() === "" || !termsChecked) {
+                alert("Please fill in all the required fields and accept the terms and conditions.");
+                event.preventDefault(); // Prevent form submission
+            } else {
+                window.location.href = "ValidateOTP.html"; // Redirect to OTP page
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Payment Portal</h1>
+
+        <form action="ValidateOTP.html" onsubmit="validateForm(event)">
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="card-name">Cardholder Name</label>
+                <input type="text" id="card-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="expiration-date">Expiration Date</label>
+                <input type="text" id="expiration-date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="number" id="cvv" required>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Payment Amount</label>
+                <input type="number" id="amount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="currency">Currency</label>
+                <select id="currency" required>
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                    <option value="gbp">GBP</option>
+                    <option value="inr">INR</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree to the terms and conditions</label>
+            </div>
+
+            <button type="submit" class="button">Pay Now</button>
+        </form>
+
+        <div class="payment-options">
+            <div class="payment-option netbanking">
+                <img src="D:\project\hospital management system\images.png" alt="Netbanking">
+                <p>Netbanking</p>
+            </div>
+            <div class="payment-option upi">
+                <img src="D:\project\hospital management system\upi.png" alt="UPI">
+                <p>UPI</p>
+            </div>
+            <div class="payment-option credit-card">
+                <img src="D:\project\hospital management system\credit.jpg" alt="Credit Card/Debit Card">
+                <p>Credit Card/Debit Card</p>
+            </div>
+            <div class="payment-option qr-code">
+                <img src="D:\project\hospital management system\qr.png" alt="QR Code">
+                <p>QR Code</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

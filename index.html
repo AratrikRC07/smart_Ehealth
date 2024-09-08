@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ClinIQ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHt0A93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Scroll to top button
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#scroll-up').fadeIn();
+                } else {
+                    $('#scroll-up').fadeOut();
+                }
+            });
+
+            $('#scroll-up').click(function() {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 600);
+                return false;
+            });
+
+            // Scroll to bottom button
+            $('#scroll-down').click(function() {
+                $('html, body').animate({
+                    scrollTop: $(document).height()
+                }, 600);
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-7 border">
+                    <div class="logo border">
+                        <a href="index.html">
+                            <img src="D:\project\hospital management system\logo (1).jpg" alt="Logo">
+                        </a>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0);">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Key Specialities <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="cardiology.html" class="speciality-cardiology">Cardiology</a></li>
+                                    <li><a href="#" class="speciality-oncology">Oncology</a></li>
+                                    <li><a href="neuroSciences.html" class="speciality-neuro-sciences">Neuro Sciences</a></li>
+                                    <li><a href="#" class="speciality-pulmonology">Pulmonology</a></li>
+                                    <li><a href="#" class="speciality-orthopaedic">Orthopaedic</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="dropdown-content">
+                                            <p>ClinIQ is a comprehensive hospital management website designed to provide seamless healthcare services to patients. With its user-friendly interface and efficient features, ClinIQ aims to enhance the overall experience of patients, doctors, and administrators.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="header-social text-center">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <a href="Bookappointment.html" class="btn-green mt-20px">
+                        <i class="fas fa-calendar-week"></i> Book Appointment
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="container">
+            <div class="banner-content">
+                <img src="D:\project\hospital management system\wallpaperflare.com_wallpaper (2).jpg" alt="Banner-Logo">
+                <h1>Our Experts at your service</h1>
+            </div>
+            <div class="service">
+                <a href="javascript:void(0);">
+                    <div class="service-content">
+                        Our Service Providers
+                    </div>
+                    <div class="service-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                </a>
+                <a href="javascript:void(0);">
+                    <div class="service-content">
+                        Book an Appointment
+                    </div>
+                    <div class="service-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                </a>
+                <a href="javascript:void(0);">
+                    <div class="service-content">
+                        Have an Emergency?
+                    </div>
+                    <div class="service-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="service-icon">
+                        <div class="call">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <div class="call-number">
+                            <p>Emergency Line</p>
+                            <h3>1-800-900</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container-fluid text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="time">
+                        <h4>Time not Flexible?</h4>
+                        <p>We provide high-quality integrated healthcare services based on a patient-centered approach.</p>
+                        <button type="button" class="btn-green btn-transparent mt-20px">
+                            
+                            <i class="fas fa-calendar-week"></i>
+                            <a href="checkuptime.html" class="btn-suggest">Suggest Checkup Time</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="response">
+                        <a href="javascript:void(0)">
+                            <div class="response-bg" style="background-image:url(D:\project\hospital management system\covid.jpg);"></div>
+                            <div class="response-content">
+                                <div class="response-icon">
+                                    <i class="fab fa-canadian-maple-leaf"></i>
+                                </div>
+                                <h2>Our Covid-19 Response</h2>
+                                <p>For everyday care or life-changing care, you can count on us to keep you and your loved ones safe and healthy</p>
+                                <a type="button" href="Covid-19.html">Read More</a> <!-- Link to COVID-19 response page -->
+                                <button type="button" class="read-more mt-20px">Read More
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bottom-section">
+        <div class="container-fluid text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="hours">
+                        <!-- Working Hours section -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-buttons">
+            <a href="#" id="scroll-up">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+            <a href="#" id="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+    <script>
+        var header = document.getElementsByTagName("header");
+        window.onscroll = function() { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                header[0].setAttribute("class", "header-active");
+            } else {
+                header[0].removeAttribute("class");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receipt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .success-message {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0f0;
+      font-size: 24px;
+    }
+
+    .booking-details {
+      margin-bottom: 20px;
+    }
+
+    .booking-details p {
+      margin-bottom: 5px;
+    }
+
+    .btn-print {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn-print:hover {
+      background-color: #000;
+      transform: scale(1.05);
+    }
+
+    .btn-print:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Receipt</h1>
+    <div class="success-message">Payment Successful</div>
+    <div class="booking-details">
+      <p>Booking ID: 123456</p>
+      <p>Date: July 10, 2023</p>
+      <p>Amount Paid: $100</p>
+      <p>Payment Method: Credit Card</p>
+    </div>
+    <div class="btn-print" onclick="window.print()">Print Receipt</div>
+  </div>
+</body>
+
+</html>
