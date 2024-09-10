@@ -6,6 +6,8 @@ Appointment booking: Users can book appointments with healthcare providers.
 COVID-19 information: The system provides up-to-date information about the COVID-19 pandemic.
 Payment processing: Users can make payments for their healthcare services through the system.
 Hospital management: The system helps healthcare providers manage their hospital operations.
+
+
 Technology Stack
 HTML
 JavaScript
